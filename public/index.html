@@ -1,0 +1,427 @@
+<!-- source:https://medium.com/100-days-in-kyoto-to-create-a-web-app-with-google/day-17-styling-a-search-box-like-googles-e17dd9074abe -->
+<!doctype html>
+
+<html>
+  <head>
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="utf-8">
+    <title>Sky Search</title>
+    <style>
+
+    	html {
+		  --dark-gray: rgb(90, 90, 90);
+		  --light-gray: rgb(148, 148, 148);
+		  --focus-blue: rgb(69, 159, 189);
+		  font-family: 'Noto Sans', Verdana, sans-serif;
+		  background-image: url('./background.jpg');
+		  background-size: cover;
+		}
+
+        body {
+            text-align: center;
+        }
+  
+        h1 {
+            color: #447aa0;
+            font-size: 4em;
+        }
+
+	   caption {
+            margin: 10px 0;
+        }
+  
+        .results {
+            display: flex;
+            justify-content: center;
+            position: relative;
+			margin-top: 30px;
+			z-index: 99;
+			top: 22%;
+			left: 0;
+			right: 0;
+			flex-direction: column;
+			align-items:flex-start;
+			text-align: left;
+			margin-left:28vw;
+        }
+        .resultItem{
+        	max-width: 44vw;
+        }
+
+        .url{
+        	font-size:1.1em;
+        }
+
+        a{
+        	color:#085477;
+        }
+
+		.realurl{
+        	color: var(--light-gray);
+        	margin-top:-1.1em;
+        	font-size:0.8em;
+        }
+
+        .realurl a{
+        	text-decoration: none;
+        	color: var(--light-gray);
+        }
+
+        .icon-cloud{
+        	font-size:0.8em;
+        }
+
+        .cached{
+        	margin-top:-1.4em;
+        }
+
+        #loading{
+            display: none;
+            justify-content: center;
+        }
+
+        #spellcheck{
+        	margin-top: 3vh;
+        }
+
+        .searchbox {
+		  --target-size: 48px; 
+		  --box-height: var(--target-size);
+		  --border-radius: calc(var(--box-height) / 2);
+		  --border-width: 2px;
+		  --icon-size: calc(var(--box-height) * 3/4 );
+		  --side-margin: calc(var(--border-radius) / 2);
+		  --icon-vertical-margin: calc( ( var(--box-height) - var(--icon-size) ) / 2 );
+		  margin-bottom: 50px;
+		}
+
+		.searchbox {
+		  height: var(--box-height);
+		  max-width: 561px; 
+		}
+		.searchbox input[type="search"] {
+		  border: var(--border-width) solid var(--dark-gray);
+		  border-radius: var(--border-radius);
+		  height: 100%;
+		  width: 100%;
+		}
+
+		.searchbox svg {
+		  fill: var(--dark-gray);
+		  height: var(--icon-size);
+		  width: var(--icon-size);
+		}
+		.searchbox input[type="search"] {
+		  -webkit-appearance: none; 
+		  color: var(--dark-gray); 
+		  font-family: 'Noto Sans', Verdana, sans-serif;
+		  font-size: 1rem;
+		}
+		.searchbox input[type="search"]::placeholder {
+		  color: var(--light-gray);
+		  opacity: 1; 
+		}
+
+		.searchbox {
+		  position: relative;
+		}
+		.searchbox svg {
+		  position: absolute;
+		  left: var(--side-margin);
+		  top: var(--icon-vertical-margin);
+		  bottom: var(--icon-vertical-margin);
+		}
+		.searchbox input[type="search"] {
+		  padding-left: calc( var(--side-margin) + var(--icon-size) + 4px);
+		  padding-right: var(--side-margin);
+		}
+		input[type="search"]::-webkit-search-decoration {
+		  -webkit-appearance: none; 
+		}
+
+		.searchbox svg {
+		  z-index: -1;
+		}
+		.searchbox input[type="search"] {
+		  background: transparent;
+		}
+
+		.searchbox input[type="search"]:focus {
+		  border-color: var(--focus-blue);
+		  box-shadow: 0px 0px 5px var(--focus-blue);
+		  outline: 1px solid transparent; 
+		}
+
+		.searchbox input[type="search"]::-webkit-search-cancel-button {
+		  -webkit-appearance: none;
+		  background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='rgb(148, 148, 148)' %3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z' /%3E%3C/svg%3E%0A");
+		  height: calc(var(--box-height) / 2);
+		  width: calc(var(--box-height) / 2);
+		}
+
+		input[type="search"] {
+		  -webkit-tap-highlight-color: transparent; 
+		}
+
+		body .searchbox {
+		  width: 90%;
+		  margin: 0 auto;
+		}
+
+		#suggestion{
+			display: flex;
+            justify-content: center;
+            position: relative;
+			margin-top: 1vh;
+			z-index: 99;
+			top: 22%;
+			left: 0;
+			right: 0;
+			flex-direction: column;
+			align-items:flex-start;
+			text-align: left;
+			margin-left:29vw;
+		}
+
+		.suggestItem{
+			max-width: 40.5vw;
+			margin-bottom: 0.3em;
+			border: 1px solid var(--light-gray);
+			border-top: none;
+		    border-left: none;
+		    border-right: none;
+		}
+
+		.suggestItem a{
+			text-decoration: none;
+		}
+
+		#pagination{
+			position: relative;
+			top: 3vh;
+  			text-align: center;
+  			padding-bottom: 40px;
+		}
+
+		#pagination button {
+		  text-decoration: none;
+          display: none;
+		  padding: 8px 16px;
+		}
+
+		#pagination button:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		.previous {
+		  background-color: #f1f1f1;
+		  color: black;
+		}
+
+		.next {
+		  background-color: #0785a6;
+		  color: white;
+		}
+    </style>
+
+  </head>
+
+  <body>
+    <h1>SkySearch</h1>
+    <div class="searchbox">
+	  <svg 
+	    aria-hidden="true"
+	    viewBox="0 0 24 24"
+	  >
+	    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+	  </svg>
+	  <input 
+	    autocomplete="off"
+	    inputmode="search" 
+	    placeholder="Sky Search"
+	    type="search" 
+	    name="searchTerm"
+	    onKeyUp="updateSuggestions()"
+	    onkeypress="handlePress(event)"
+	    id="searchBox"
+	  />
+
+	</div>
+    <div id="spellcheck"></div>
+    <div id="suggestion"></div>
+    <div id="loading">loading...</div>
+    <div class="results" id="searchResults">
+    </div>
+    <div id="pagination">
+		<button class="previous round" id="prevButton" onclick="prevPage()">&#8249;</a>
+		<button class="next round" id="nextButton" onclick="nextPage()">&#8250;</a>
+	</div>
+    
+    <script type="text/javascript">
+        const pageSize = 6;
+        let curPage = 1;
+        let totalPage;
+        let obj=[];
+        let host = window.location.host;
+        console.log("host:"+host);
+        let hostH = window.location.host.split(":")[0];
+        console.log("hostH:"+hostH);
+        let trending = [];
+
+        const urls = document.getElementsByClassName("url");
+        const ranking = document.getElementsByClassName("ranking");
+        const score = document.getElementsByClassName("score");
+        const pagerank = document.getElementsByClassName("pagerank");
+        const hits = document.getElementsByClassName("hits");
+        const resultsDiv = document.getElementsByClassName("results");
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+        const suggestion = document.getElementById("suggestion");
+        const spellcheck = document.getElementById("spellcheck");
+        const searchResults = document.getElementById("searchResults");
+        const loading = document.getElementById("loading");
+
+        if(trending.length==0){
+            request = new XMLHttpRequest();
+            request.open("GET", "http://"+hostH+":8888/suggest");
+            request.getResponseHeader("Content-type", "application/json");
+            
+            request.onload = function() {
+              if ((request.readyState == 4) && (request.status == 200)) {
+                trending = JSON.parse(this.responseText);
+              }
+            }
+            request.send();
+        }
+
+        function handlePress(event) {
+	      if (event.keyCode == 13) {
+	         goSearchResult();
+	         return true;
+	      } else {
+	         return false;
+	      }
+	   }
+
+        function prevPage() {
+            if(curPage > 1) curPage--;
+            renderTable();
+        }
+
+        function nextPage() {
+            if((curPage * pageSize) < obj.length) curPage++;
+            renderTable();
+        }
+
+        function renderTable(){
+            let result = '';
+
+            obj.filter((row, index) => {
+                let start = (curPage-1)*pageSize;
+                let end =curPage*pageSize;
+                if(index >= start && index < end) return true;
+            }).forEach((o, index) => {
+                result += `<div class="resultItem">
+                 <p class="url"><a href="${o.url}" target="_blank">${o.title}</a></p>
+                 <p class="realurl"><i class="material-icons icon-cloud">cloud</i> <a href="http://${host}/cached/${o.id}" target="_blank">${o.url}</a> </p>
+                 </div>`;
+                 searchResults.innerHTML = result;
+            });
+
+            if(obj.length>0){
+            	prevButton.style.display="inline";
+	            nextButton.style.display="inline";
+	            if(curPage==1) prevButton.style.display="none";
+	            if(curPage==totalPage) nextButton.style.display="none";
+            }else{
+            	result+= `<div class="resultItem" style="margin-left:16vw"> No matches found</div>`;
+            	searchResults.innerHTML = result;
+            }
+        }
+
+        function updateSuggestions() {
+            let term = document.getElementById('searchBox').value;
+            let suggestTopics = trending.filter((item, index) => {
+                if( term!="" && item.title.toLowerCase().includes(term.toLowerCase())) return true;
+            })
+
+            suggestTopics.sort((a,b) => b.pagerank-a.pagerank);
+
+            if(suggestTopics && suggestTopics.length>0){
+                let result = "";
+                suggestTopics.forEach((item, index) => {
+                    if(index<10) result += `<div class="suggestItem"><a href="${item.url}" target="_blank">${item.title}</a></div>`;
+                });
+                suggestion.innerHTML = result;
+                suggestion.style.display = "flex";
+            }
+            else suggestion.style.display = "none";
+        }
+
+        let checkedTerm = "";
+        function updateCheckedTerm(){
+            document.querySelector('input[name="searchTerm"]').value = checkedTerm;
+            goSearchResult();
+        }
+
+
+        function goSearchResult() {
+            spellcheck.innerHTML = null;
+            let term = document.getElementById('searchBox').value;
+            console.log(term);
+
+            if(term!=""){
+                loading.style.display = "flex";
+
+                const checkxhr = new XMLHttpRequest();
+
+                checkxhr.open("GET", "http://"+host+"/check/"+escape(term),true);
+                checkxhr.getResponseHeader("Content-type", "application/json");
+              
+                checkxhr.onload = function() {
+                  if (xhr.status == 200) {
+                    checkObj = JSON.parse(this.responseText);
+                    if(checkObj.flaggedTokens.length>0){
+                        let suggestedTerm = document.getElementById('searchBox').value;
+                        checkedTerm = ""
+                        flaggedTokens = checkObj.flaggedTokens;
+                        for(let i=0;i<flaggedTokens.length;i++){
+                            if(i==0) checkedTerm += suggestedTerm.substring(0, flaggedTokens[i].offset);
+                            checkedTerm += flaggedTokens[i].suggestions[0].suggestion;
+                            if(i>=0 & i<flaggedTokens.length-1) checkedTerm += suggestedTerm.substring(flaggedTokens[i].offset+flaggedTokens[i].token.length, flaggedTokens[i+1].offset);
+                            if(i == flaggedTokens.length-1) checkedTerm += suggestedTerm.substring(flaggedTokens[i].offset+flaggedTokens[i].token.length);
+                        }
+
+                        let spellcheckHtml = "Do you mean: <a href='javascript:void(0);' onclick='updateCheckedTerm()'>"+checkedTerm+"</a>?";
+                        spellcheck.innerHTML = spellcheckHtml;
+                    }
+                    else{
+                        spellcheck.innerHTML = null;
+                    }
+                  }
+                }
+                checkxhr.send();
+                
+                const xhr = new XMLHttpRequest();
+
+                xhr.open("GET", "http://"+hostH+":8888/search/"+escape(term),true);
+                xhr.getResponseHeader("Content-type", "application/json");
+                xhr.onload = function() {
+                  if (xhr.status == 200) {
+                    obj = JSON.parse(this.responseText);
+                    totalPage = Math.ceil(obj.length/pageSize);
+                    renderTable();
+                    resultsDiv[0].style.display="flex";
+                    suggestion.style.display = "none";
+                    loading.style.display = "none";
+                  }
+                }
+                xhr.send();
+            }
+
+        }
+
+  </script>
+  </body>
+</html>
