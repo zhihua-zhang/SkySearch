@@ -1,5 +1,5 @@
 <p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png" alt="crawler" title="Crawler Workflow"/></p>
-![crawler](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png)
+![crawler](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png "Crawler Workflow")
 ![search](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/search.png "Search Workflow")
 ![suggest](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/suggest.png "Search Suggestion" )
 ![spellcheck](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/spellcheck.png "Search Spellcheck" )
