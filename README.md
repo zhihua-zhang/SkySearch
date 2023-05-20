@@ -1,14 +1,16 @@
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png" width = "300" height = "200" alt="crawler" title="Crawler Workflow"/></p>
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/search.png" alt="search" title="Search Workflow"/></p>
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/suggest.png" alt="suggest" title="Search Suggestion"/></p>
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/spellcheck.png" alt="spellcheck" title="Search Spellcheck"/></p>
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_eagles.png" alt="example_eagles" title="Search 'eagles philly'"/></p>
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_fed.png" alt="example_fed" title="Search 'fed reserve interest rate'"/></p>
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_sf.png" alt="example_sf" title="Search 'visiting san francisco'"/></p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png" width = "500" height = "250" align=left alt="crawler" title="Crawler Workflow"/> <center>Crawler Workflow</center> </p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/search.png" width = "500" height = "250" align=center alt="search" title="Search Workflow"/> <center>Search Workflow</center> </p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/suggest.png" width = "500" height = "250" align=center alt="suggest" title="Search Suggestion"/> <center>Search Suggestion</center> </p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/spellcheck.png" width = "500" height = "250" align=center alt="spellcheck" title="Search Spellcheck"/> <center>Search Spellcheck</center> </p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_eagles.png" width = "500" height = "400" align=center alt="example_eagles" title="Search 'eagles philly'"/> <center>Search 'eagles philly'</center> </p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_fed.png" width = "500" height = "400" align=center alt="example_fed" title="Search 'fed reserve interest rate'"/> <center>Search 'fed reserve interest rate'</center> </p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_sf.png" width = "500" height = "400" align=center alt="example_sf" title="Search 'visiting san francisco'"/> <center>Search 'visiting san francisco'</center> </p>
 
+---
 
 To download Gson library jar: https://github.com/google/gson
 
+---
 
 Compile:
 
