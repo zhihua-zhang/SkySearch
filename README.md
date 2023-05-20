@@ -1,4 +1,4 @@
-<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png" width = "500" height = "250" align=left alt="crawler" title="Crawler Workflow"/> <center>Crawler Workflow</center> </p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png" width = "500" height = "250" align=center alt="crawler" title="Crawler Workflow"/> <center>Crawler Workflow</center> </p>
 <p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/search.png" width = "500" height = "250" align=center alt="search" title="Search Workflow"/> <center>Search Workflow</center> </p>
 <p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/suggest.png" width = "500" height = "250" align=center alt="suggest" title="Search Suggestion"/> <center>Search Suggestion</center> </p>
 <p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/spellcheck.png" width = "500" height = "250" align=center alt="spellcheck" title="Search Spellcheck"/> <center>Search Spellcheck</center> </p>
