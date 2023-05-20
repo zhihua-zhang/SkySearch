@@ -1,11 +1,10 @@
 <p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png" alt="crawler" title="Crawler Workflow"/></p>
-![crawler](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/crawler.png "Crawler Workflow")
-![search](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/search.png "Search Workflow")
-![suggest](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/suggest.png "Search Suggestion" )
-![spellcheck](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/spellcheck.png "Search Spellcheck" )
-![example_eagles](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_eagles.png "Search 'eagles philly'" )
-![example_fed](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_fed.png "Search 'fed reserve interest rate'" )
-![example_sf](https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_sf.png "Search 'visiting san francisco'" )
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/search.png" alt="search" title="Search Workflow"/></p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/suggest.png" alt="suggest" title="Search Suggestion"/></p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/spellcheck.png" alt="spellcheck" title="Search Spellcheck"/></p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_eagles.png" alt="example_eagles" title="Search 'eagles philly'"/></p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_fed.png" alt="example_fed" title="Search 'fed reserve interest rate'"/></p>
+<p><img src="https://github.com/zhihua-zhang/SkySearch/blob/main/asset/example_sf.png" alt="example_sf" title="Search 'visiting san francisco'"/></p>
 
 
 To download Gson library jar: https://github.com/google/gson
