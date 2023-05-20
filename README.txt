@@ -1,4 +1,4 @@
-![crawler](/asset/crawler.png "Crawler Workflow" )
+![crawler](asset/crawler.png "Crawler Workflow" )
 
 
 To download Gson library jar: https://github.com/google/gson
