@@ -1,5 +1,4 @@
-Team Name: Sky Search
-Team Member: Zhirui Yao, Zhihua Zhang, Jingyi Wu, Yaxin Liu
+![crawler](/asset/crawler.png "Crawler Workflow" )
 
 
 To download Gson library jar: https://github.com/google/gson
